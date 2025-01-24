@@ -17,8 +17,10 @@ public class Utente {
     private String cognome;
     private LocalDate dataNascita;
 
-public Utente(int numeroTessera,String nome,String cognome, LocalDate dataNascita){
-    this.numeroTessera = numeroTessera;
+    public Utente(){}
+
+public Utente(String nome,String cognome, LocalDate dataNascita){
+
     this.nome = nome;
     this.cognome = cognome;
     this.dataNascita = dataNascita;

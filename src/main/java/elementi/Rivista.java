@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 public class Rivista extends ElementoCatalogo {
     private String periodicita;
 
+    public Rivista(){}
+
 public Rivista (String ISBN, String titolo, int annoPubblicazione, int numeroPagine,String periodicita){
     super(ISBN,titolo,annoPubblicazione,numeroPagine);
     this.periodicita = periodicita;

@@ -4,8 +4,17 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
              version="3.1">
 
-    <persistence-unit name="gestioneEventi" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="gestioneBiblioteca" transaction-type="RESOURCE_LOCAL">
+        <!-- Specifica il provider JPA (Hibernate) -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Aggiungi tutte le classi delle entità -->
         <class>org.example.ElementoCatalogo</class>
+        <class>org.example.Libro</class>
+        <class>org.example.Rivista</class>
+        <class>org.example.Utente</class>
+        <class>org.example.Prestito</class>
+
         <properties>
             <!-- Configurazione del database -->
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>

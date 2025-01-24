@@ -1,37 +1,39 @@
 package elementi;
 
-
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity
 public class Prestito {
-@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPrestito;
 
     @ManyToOne
-    @JoinColumn(name="ISBN")
+    @JoinColumn(name = "ISBN")
     private ElementoCatalogo elementoPrestato;
 
     @ManyToOne
     @JoinColumn(name = "numeroTessera")
     private Utente utente;
+
     private LocalDate dataInizio;
     private LocalDate dataRestituzionePrevista;
     private LocalDate dataRestituzioneEffettiva;
 
+    // Costruttore predefinito (obbligatorio per JPA)
+    public Prestito() {}
 
-public Prestito(int idPrestito,ElementoCatalogo elementoPrestato,Utente utente, LocalDate dataInizio,LocalDate dataRestituzionePrevista, LocalDate dataRestituzioneEffettiva){
-    this.idPrestito = idPrestito;
-    this.elementoPrestato = elementoPrestato;
-    this.utente = utente;
-    this.dataInizio = dataInizio;
-    this.dataRestituzionePrevista = dataRestituzionePrevista;
-    this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
-}
+    // Costruttore personalizzato
+    public Prestito(ElementoCatalogo elementoPrestato, Utente utente, LocalDate dataInizio, LocalDate dataRestituzionePrevista, LocalDate dataRestituzioneEffettiva) {
+        this.elementoPrestato = elementoPrestato;
+        this.utente = utente;
+        this.dataInizio = dataInizio;
+        this.dataRestituzionePrevista = dataRestituzionePrevista;
+        this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
+    }
 
+    // Getters e Setters
     public int getIdPrestito() {
         return idPrestito;
     }

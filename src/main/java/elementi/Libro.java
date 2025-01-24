@@ -14,6 +14,10 @@ public Libro(String ISBN, String titolo, int annoPubblicazione, int numeroPagine
     this.genere = genere;
 }
 
+    public Libro() {
+
+    }
+
     public String getAutore() {
         return autore;
     }
