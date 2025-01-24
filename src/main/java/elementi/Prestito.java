@@ -21,10 +21,10 @@ public class Prestito {
     private LocalDate dataRestituzionePrevista;
     private LocalDate dataRestituzioneEffettiva;
 
-    // Costruttore predefinito (obbligatorio per JPA)
+
     public Prestito() {}
 
-    // Costruttore personalizzato
+
     public Prestito(ElementoCatalogo elementoPrestato, Utente utente, LocalDate dataInizio, LocalDate dataRestituzionePrevista, LocalDate dataRestituzioneEffettiva) {
         this.elementoPrestato = elementoPrestato;
         this.utente = utente;
@@ -33,7 +33,7 @@ public class Prestito {
         this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
     }
 
-    // Getters e Setters
+
     public int getIdPrestito() {
         return idPrestito;
     }
